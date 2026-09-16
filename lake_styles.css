@@ -1,0 +1,200 @@
+﻿/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author:LiuMenghan 
+   Date:2026/9/16   
+   
+   Filename: lake_styles.css
+
+*/
+/*Task 3a:Definition of the character encoding*/
+@charset "utf-8";
+/*Task 3b:Application of custom web fonts*/
+@font-face{
+   font-family:'Champagne';
+   src:url('cac_champagne.woff')format('woff'),
+      url('cac_champagne.ttf') format('truetype');
+}
+@font-face{
+   font-family:'Dobkin';
+   src:url('DobkinPlain.woff')format('woff'),
+      url('DobkinPlain.ttf') format('truetype');
+}
+/*Task 3c:Setting background and text colors using color names and hex values*/
+header{
+   background-color:#e0e0e0;
+   color:white;
+}
+footer{
+   background-color:#e0e0e0;
+   text-align:center;
+   padding:15px;
+}
+body{
+   font-family:Arial,sans-serif;
+   background-color: #f4f4f9;
+   color:black;
+}
+/*Task 3d & 3e:Application of semi-transparent color and id attribute selector*/
+#leftcol{
+   background-color: rgba(255, 220, 255, 0.85);
+   padding:20px;
+   grid-area: left;
+   width: 100%;
+   box-sizing: border-box;
+}
+/*Base styles for the right column*/
+#rightcol{
+   background-color: #eaf1ea;
+   grid-area:right;
+   width:100%;
+   padding:15px;
+   box-sizing:border-box;
+}
+/*Task 3h:Styles that modify the padding space and margin space*/
+#leftcol aside{
+   padding:15px;
+   margin-top:25px;
+   margin-bottom:20px;
+   border-radius:8px;
+   border:#5c3b8e;
+}
+/*Task 3g:Use of pseudo-classes as selectors for specific cards*/
+#leftcol aside:nth-of-type(1){
+   background-color: #fcf8e3;
+   border:1px solid #cf992d;
+}
+#leftcol aside:nth-of-type(2){
+    background-color: #e6f7ff; 
+    border: 1px solid #91d5ff; 
+}
+#leftcol aside h1{
+   font-size:150%;
+   color:darkgreen;
+   margin-top:10px;
+}
+/*Task 3f:Styles that modify the appearance of lists and list markers*/
+#leftcol aside ul{
+   list-style-type:square;
+   padding-left:20px;
+}
+#leftcol aside li{
+   font-style:italic;
+}
+#leftcol aside a{
+   font-style:normal;
+}
+/*Task 3e:Style rules applied to nested elements and child elements*/
+#leftcol p em{
+   font-family:'Champagne',serif;
+   font-size:150%;
+   color:darkcyan;
+   font-style:normal;
+   font-weight:bold;
+}
+footer em{
+   font-family:'Champagne',serif;
+   font-size:150%;
+   color:darkcyan;
+   font-style:normal;
+   font-weight:bold;
+}
+/*Base styles for links*/
+a{
+   color:darkred;
+   font-weight:bold;
+}
+/*Task 3g: Use of pseudo-classes for interactive links*/
+a:hover{
+   color:orange;
+}
+a:visited{
+   text-decoration: none;
+}
+h1,h2{
+   font-family: 'Champagne', sans-serif;
+}
+/*Task 3i:A style rule that generates content in the rendered page*/
+blockquote::before{
+    content:'\201C'; 
+    font-size:200%;
+    color:teal;
+    line-height:0;
+    vertical-align:-10px;
+}
+blockquote::after{
+   content:'\201D';
+   font-size:200%;
+   color:teal;
+   line-height:0;
+   vertical-align:-10px;
+}
+/*Typography styles for blockquote*/
+blockquote{
+   font-family:'Champagne', Arial, sans-serif;
+    font-style:italic;
+    line-height:1.1;
+    color:#333333;
+    font-size:150%;
+}
+/*Task 3j: Arrange the page using Grid and Flexbox Layouts*/
+body{
+    display: grid !important;
+    grid-template-columns:3fr 2fr !important;
+    grid-template-areas: 
+        "header header"
+        "left right"
+        "footer footer" !important;
+    gap:30px;
+}
+
+header{
+    grid-area: header; 
+}
+footer{ 
+   grid-area: footer;
+}
+#leftcol{
+    grid-area:left;
+    width:100% !important;
+    margin:0 !important;
+}
+#rightcol{
+    grid-area:right;
+    width:100% !important;
+    margin:0 !important;
+}
+/*Overrides for sidebar card layout*/
+#leftcol aside{
+    width:100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+/*Overrides for original navigation table layout*/
+body>header>nav,
+body>header>nav>ul>li{
+    display:block !important;
+}
+/*Flexbox Layout for Header Navigation*/
+body>header>nav>ul {
+    display:flex !important;
+    justify-content:space-around;
+    padding:10px;
+}
+/*Flexbox Layout for Right Column vertical list*/
+#rightcol ul{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:8px;
+    padding-left:0 !important;
+    list-style-type:square;
+}
+#rightcol a{
+    display:block;
+    padding:10px;
+    background-color:#94cb94;
+    border-radius:4px;
+}
