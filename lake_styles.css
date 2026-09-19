@@ -60,7 +60,6 @@ body{
    margin-top:25px;
    margin-bottom:20px;
    border-radius:8px;
-   border:#5c3b8e;
 }
 /*Task 3g:Use of pseudo-classes as selectors for specific cards*/
 #leftcol aside:nth-of-type(1){
@@ -89,7 +88,7 @@ body{
 }
 /*Task 3e:Style rules applied to nested elements and child elements*/
 #leftcol p em{
-   font-family:'Champagne',serif;
+   font-family:'Dobkin',serif;
    font-size:150%;
    color:darkcyan;
    font-style:normal;
@@ -142,7 +141,7 @@ blockquote{
 }
 /*Task 3j: Arrange the page using Grid and Flexbox Layouts*/
 body{
-    display: grid !important;
+    display:grid !important;
     grid-template-columns:3fr 2fr !important;
     grid-template-areas: 
         "header header"
@@ -182,6 +181,7 @@ body>header>nav>ul>li{
 body>header>nav>ul {
     display:flex !important;
     justify-content:space-around;
+    align-items:center !important;
     padding:10px;
 }
 /*Flexbox Layout for Right Column vertical list*/
